@@ -3,7 +3,7 @@
     margin: 0px;
     border: 0px; 
     padding: 0px;
-    font-family: "Montserrat";
+    font-family: "Inter";
     text-decoration: none;
     list-style: none;
     color: var(--cor9);
@@ -26,12 +26,13 @@
     /* Fontes */
 
     --fonteTitulo: 'Roboto Condensed', serif;
-    --fonteParagrafo: 'Montserrat';
+    --fonteParagrafo: 'Inter';
 
 }
 
 img {
     display: block;
+    box-sizing: border-box;
 }
 
 .hide {
@@ -40,10 +41,9 @@ img {
 }
 
 html, body {
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden;
     background-color: var(--corSecundaria);
 }
 
@@ -76,11 +76,17 @@ p {
     font-family: var(--fonteParagrafo);
 }
 
+#logo {
+
+    width: 100px;
+    margin: auto;
+}
+
 #logo > img {
 
-    width: 150px;
     display: block;
-    margin: 0 auto 0 auto;
+    width: 100%;
+   
 }
 
 .nav_item a {
@@ -110,10 +116,11 @@ header {
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 2;
     flex-direction: column;
     justify-content: center;
     background-color: var(--corPrincipal);
-    margin-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 #logo > img {
@@ -149,6 +156,59 @@ header {
     transition: 0.5s;
     font-size: 1.8em;
     color: var(--cor8);
+}
+
+#areas_section {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 10px;
+    background-color: var(--corSecundaria);
+}
+
+#area_wrapper {
+
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.area_overview {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60px;
+    height: 125px;
+    padding: 20px;
+    text-align: center;
+    border: 5px solid;
+    border-color: var(--cor4);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 2px;
+    background-color: var(--cor5);
+}
+
+.area_overview h2 {
+    font-size: 1em;
+    color: var(--corSecundaria)
+}
+
+.area_overview i {
+
+    font-size: 3em;
+}
+
+.area_overview:hover {
+
+    transition: all .5s ease-in-out;
+    transform: scale(1.2);
 }
 
 /*Visualização em telas médias: */
@@ -189,9 +249,26 @@ header {
         align-items: center;
         position: relative;
         gap: 20px;
-
-        
     }
+
+    .area_overview {
+
+        width: 250px;
+        height: 300px;
+
+    }
+
+    .area_overview h2 {
+        font-size: 2em;
+        color: var(--corSecundaria)
+    }
+
+    .area_overview i {
+
+        font-size: 6em;
+    }
+
+    
 }
 
 /*Visualização em telas maiores: */
@@ -213,69 +290,28 @@ header {
 /* Seções da página principal: */
 main > section {
 
-    margin: 0px auto 80px auto;
-    box-shadow: 0px 2px 4px 1px;
-    width: 98%;
+    margin-bottom: 80px;
+    padding: 10px;
 }
 
 #intro_section {
 
+    display: flex;
+    justify-content: center;
     height: 500px;
-    padding: 10px;
+    padding: 50px 10px 10px 10px;
     background-color: var(--cor8);
    
 }
 
-#areas_section {
+#intro_section article {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: inherit;
-    padding: 10px;
-    background-color: var(--cor8);
+    width: 70%;
 }
 
-#area_wrapper {
+#areas_section h1 {
 
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.area_overview {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 250px;
-    height: 300px;
-    padding: 20px;
-    text-align: center;
-    border: 5px solid;
-    border-color: var(--cor4);
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px 2px;
-    background-color: var(--cor5);
-}
-
-.area_overview:hover {
-
-    transition: all .2s ease-in-out;
-    transform: scale(1.1);
-}
-
-.area_overview h2 {
-    color: var(--corSecundaria)
-}
-
-.area_overview i {
-
-    font-size: 6em;
+    color: var(--cor5);
 }
 
 #clientes_section {
@@ -285,9 +321,8 @@ main > section {
     justify-content: center;
     align-items: center;
     background: var(--cor8);
-    height: 300px;
-    width: 100%;
-    padding: 10px;
+    min-height: 400px;
+    
 }
 
 #client_logos_wrapper {
@@ -295,11 +330,13 @@ main > section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-boxclien;
+    max-width: 100%;
     height: inherit;
     padding: 20px;
     gap: 80px;
-    overflow-x: scroll;
+
 }
 
 .client_logo {
@@ -328,16 +365,12 @@ main > section {
 #equipe_section {
 
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
-    flex-direction: center;
-    background-color: white;
-}
-
-#equipe_wrapper {
-
-    display: flex;
-    margin-bottom: 50px;
+    background-color: var(--cor6);
+    padding: 50px 0px 40px 0px;
+    margin-bottom: 0px;
 }
 
 .adv_profile {
@@ -346,24 +379,24 @@ main > section {
     flex-direction: column;
     justify-content: first baseline;
     align-items: center;
-    min-width: 300px;
+    width: 400px;
     height: 500px;
     background-color: var(--cor6);
     border-radius: 10px;
 }
 
-.adv_profile:hover {
-
-    transition: all .5s ease-in-out;
-    transform: scale(1.1);
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    scrollbar-color: #CEB884 #08183A;
+    scrollbar-width: thin;
 }
 
-figure {
+figure p {
 
-    height: 200px;
-    display: inline;
-    text-align: center;
-
+    color: var(--cor8);
 }
 
 #adv_pic_div {
@@ -371,11 +404,11 @@ figure {
     height: 300px;
     width: 300px;
     border-radius: 5px;
-    background-color: blue;
 }
 
 .adv_profile img {
     width: 100%;
+    border-radius: 250px;
 }
 
 .adv_profile h3 {
@@ -390,12 +423,11 @@ figure {
     color: white;
 }
 
-
-
 footer {
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     background-color: var(--corPrincipal);
 }
@@ -414,7 +446,7 @@ footer > ul {
 
 }
 
-footer a {
+footer a, li {
 
     color: white;
 }
