@@ -1,7 +1,7 @@
 /* Seleção de elementos: */
 
 const nav_list = document.getElementById("nav_list");
-const bar_nav = document.getElementById("menu_bars");
+const menu_bars = document.getElementById("menu_bars");
 
 /* Eventos: */
 
@@ -10,6 +10,8 @@ window.addEventListener("resize", ()=> {
 
     if(window.innerWidth <= 800) {
         nav_list.style.display = "none";
+        menu_bars.style.display = "block";
+        
     }
 
     else if(window.innerWidth >= 800) {
@@ -22,14 +24,18 @@ document.addEventListener("click", (e)=> {
 
     if(e.target.id == "menu_bars" && nav_list.style.display == "none") {
         nav_list.style.display = "flex";
-        bar_nav.classList.replace("fa-bars", "fa-x");
+        menu_bars.classList.replace("fa-bars", "fa-x");
     }
 
     else if(e.target.id == "menu_bars" && nav_list.style.display == "flex") {
         nav_list.style.display = "none";
-        bar_nav.classList.replace("fa-x", "fa-bars");
+        menu_bars.classList.replace("fa-x", "fa-bars");
     }
 });
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    nav_list.style.display = "none";
+})
 
 /* Barra de navegação: */
 
