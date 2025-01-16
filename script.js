@@ -5,8 +5,19 @@ const bar_nav = document.getElementById("menu_bars");
 
 /* Eventos: */
 
-nav_list.style.display = "none"
+//Exibe e esconde navegação com base no tamanho: 
+window.addEventListener("resize", ()=> {
 
+    if(window.innerWidth <= 800) {
+        nav_list.style.display = "none";
+    }
+
+    else if(window.innerWidth >= 800) {
+        nav_list.style.display = "flex";
+    }
+})
+
+//Exibe e esconde navegação com base no clique no menu de barras:
 document.addEventListener("click", (e)=> {
 
     if(e.target.id == "menu_bars" && nav_list.style.display == "none") {

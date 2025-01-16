@@ -257,18 +257,18 @@ nav {
         
     }
 
-    #bar_nav {
+    #menu_bars {
         display: none;
     }
 
     #nav_list {
 
-        height: 40px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 10px;
+        height: 40px;
         
     }
 
