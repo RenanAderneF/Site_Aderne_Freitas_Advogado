@@ -238,9 +238,16 @@ nav {
     transform: scale(1.1);
 }
 
+#dados_adicionais {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 #dados_adicionais iframe{
-    width: 250px;
-    height: 200px;
+    width: 125px;
+    height: 100px;
 }
 
 /*Visualização em telas médias: */
