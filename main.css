@@ -139,17 +139,21 @@ header {
 #nav_list {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
     margin: auto 10px auto 10px;
+}
+
+#nav_list a {
+
+    font-size: 0.5em;
 }
 
 #social_list {
 
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 10px;
 }
 
 #social_list i {
@@ -236,22 +240,20 @@ header {
         
     }
 
-    nav {
-
-        display: flex;
-        flex-direction: row;
-    }
-
     #nav_list {
 
         height: 40px;
-        font-size: 0.8em;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 10px;
         
+    }
+
+    #nav_list a {
+
+        font-size: 1em;
     }
 
     #social_list {
