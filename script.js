@@ -1,15 +1,37 @@
 /* Seleção de elementos: */
 
-const news_section = document.getElementById("news_section");
-const areas_section = document.getElementById("area_wrapper");
+const nav_list = document.getElementById("nav_list");
+const bar_nav = document.getElementById("menu_bars");
 
-/* Carrosel de notícias: */
+/* Eventos: */
 
-document.addEventListener("click", (e) => {
+nav_list.style.display = "none"
 
-    if(e.target.id == "news_section") {
+document.addEventListener("click", (e)=> {
 
-        alert("notícias fi");
+    if(e.target.id == "menu_bars" && nav_list.style.display == "none") {
+        nav_list.style.display = "flex";
+        bar_nav.classList.replace("fa-bars", "fa-x");
     }
 
-})
+    else if(e.target.id == "menu_bars" && nav_list.style.display == "flex") {
+        nav_list.style.display = "none";
+        bar_nav.classList.replace("fa-x", "fa-bars");
+    }
+});
+
+/* Barra de navegação: */
+
+const exibeNav = () => {
+
+    alert("Oi");
+    
+
+    if(nav_display === "none") {
+        nav_list.style.display = "flex";
+    }
+
+    else if(nav_display === "flex") {
+        nav_list.style.display = "none";
+    }
+}
