@@ -71,6 +71,7 @@ h2, h3, h4{
 
 p {
 
+    text-align: justify;
     text-indent: 30px;
     font-size: 1.3em;
     font-weight: 400;
@@ -85,7 +86,6 @@ p {
 
 #logo img {
 
-    display: block;
     width: 100%;
    
 }
@@ -131,7 +131,6 @@ header {
 
 #logo > img {
 
-    display: block;
     width: 100%;
 }
 
@@ -171,6 +170,7 @@ header {
     align-items: center;
     gap: 50px;
     padding: 10px;
+    margin-bottom: 80px;
     background-color: var(--corSecundaria);
 }
 
@@ -214,7 +214,12 @@ header {
 .area_overview:hover {
 
     transition: all .5s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+#dados_adicionais iframe{
+    width: 250px;
+    height: 200px;
 }
 
 /*Visualização em telas médias: */
@@ -274,7 +279,11 @@ header {
         font-size: 6em;
     }
 
-    
+    #dados_adicionais iframe {
+
+        width: 300px;
+        height: 250px;
+    }
 }
 
 /*Visualização em telas maiores: */
@@ -291,28 +300,82 @@ header {
         position: initial; /* Reseta a posição da lista com redes sociais*/
     }
 
+    #dados_adicionais iframe {
+
+        width: 400px;
+        height: 350px;
+    }
+
 }
 
-/* Seções da página principal: */
-main > section {
+#news_section {
 
-    margin-bottom: 80px;
-    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    background-color: var(--cor8);
+   
+}
+
+.news_article {
+
+    background-color: rgb(223, 223, 255);
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+.news  {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}
+
+.news_img {
+    background: url(assets/imgs/logos/Logo\ 3_page-0003.jpg) no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#news_section :nth-child(1) {
+
+    color: red;
+}
+
+#news_section :last-child {
+
+    color: red;
 }
 
 #intro_section {
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    height: 500px;
-    padding: 50px 10px 10px 10px;
+    gap: 100px;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: var(--cor8);
    
 }
 
 #intro_section article {
 
-    width: 70%;
+    width: 60%;
 }
 
 #areas_section h1 {
@@ -329,6 +392,11 @@ main > section {
     background: var(--cor8);
     min-height: 400px;
     
+}
+
+#clientes_section h1 {
+    margin-top: 15px
+
 }
 
 #client_logos_wrapper {
@@ -374,9 +442,21 @@ main > section {
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: var(--cor6);
     padding: 50px 0px 40px 0px;
-    margin-bottom: 0px;
+    margin: auto;
+}
+
+#equipe_wrapper {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 80%;
+    
 }
 
 .adv_profile {
@@ -387,7 +467,8 @@ main > section {
     align-items: center;
     width: 400px;
     height: 500px;
-    background-color: var(--cor6);
+    padding: 10px;
+    background-color: #091d4c;
     border-radius: 10px;
 }
 
@@ -401,20 +482,32 @@ figure {
 }
 
 figure p {
-
+    width: 80%;
+    margin: auto;
     color: var(--cor8);
 }
 
 #adv_pic_div {
 
-    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
     width: 300px;
     border-radius: 5px;
 }
 
+
+
 .adv_profile img {
     width: 100%;
     border-radius: 250px;
+}
+
+.adv_profile i {
+
+    color: rgb(203, 201, 201);
+    font-size: 6em;
 }
 
 .adv_profile h3 {
@@ -423,10 +516,12 @@ figure p {
     color: white;
 
 }
-.adv_profile figcaption {
+.adv_profile p{
 
     margin-top: 15px;
-    color: white;
+    text-indent: 30px;
+    text-align: justify;
+    color: rgb(255, 255, 255);
 }
 
 footer {
@@ -435,6 +530,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    width: 100%;
     background-color: var(--corRodape);
 }
 
@@ -457,11 +553,75 @@ footer a, li {
     color: white;
 }
 
+/* SOBRE: */
+
+#intro_section {
+
+    background-color: var(--corSecundaria);
+}
+
+#intro_section h1 {
+
+    color: var(--cor5);
+}
 
 /* FALE CONOSCO: */
 
 #contact_section {
     display: flex;
-    align-items: first baseline;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
 }
+
+#dados_adicionais {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+#dados_adicionais div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+#contact_section form {
+
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: fit-content;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ÁREAS: */
+
+#areas2_section {
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 60%;
+    margin: 30px auto 0px auto;
+    padding: 50px;
+}
+
+#areas2_section h1 {
+
+    color: var(--cor5);
+}
+
+#areas2_section li{
+
+    font-size: 1.2em;
+    color: var(--cor9);
+}
+
+
