@@ -8,15 +8,7 @@ const menu_bars = document.getElementById("menu_bars");
 //Exibe e esconde navegação com base no tamanho: 
 window.addEventListener("resize", ()=> {
 
-    if(window.innerWidth <= 800) {
-        nav_list.style.display = "none";
-        menu_bars.style.display = "block";
-        
-    }
-
-    else if(window.innerWidth >= 800) {
-        nav_list.style.display = "flex";
-    }
+    verificaTamanho();
 })
 
 //Exibe e esconde navegação com base no clique no menu de barras:
@@ -34,7 +26,7 @@ document.addEventListener("click", (e)=> {
 });
 
 document.addEventListener('DOMContentLoaded', ()=> {
-    nav_list.style.display = "none";
+   verificaTamanho();
 })
 
 /* Barra de navegação: */
@@ -51,4 +43,19 @@ const exibeNav = () => {
     else if(nav_display === "flex") {
         nav_list.style.display = "none";
     }
+}
+
+/* Verifica tamanho da página: */
+
+const verificaTamanho = () => {
+
+    if(window.innerWidth <= 800) {
+        nav_list.style.display = "none";
+        menu_bars.style.display = "block";
+    }
+
+    else if(window.innerWidth >= 800) {
+        nav_list.style.display = "flex";
+    }
+
 }
