@@ -56,6 +56,7 @@ const verificaTamanho = () => {
 
     else if(window.innerWidth >= 800) {
         nav_list.style.display = "flex";
+        menu_bars.style.display = "none";
     }
 
 }
